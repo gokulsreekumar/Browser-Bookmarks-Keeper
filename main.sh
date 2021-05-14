@@ -43,10 +43,9 @@ if [ $# -eq 0 ]
         ## Inside this above directory go to the application's folder inside that go to Default and there Bookmarks will be
         
         chrome_bookmark="/Users/gokulsreekumar/Library/Application Support/Google/Chrome/Default/Bookmarks"
-        chromium_bookmark=""
-        brave_bookmark=""
+        chromium_bookmark="/Users/gokulsreekumar/Library/Application Support/Chromium/Default/Bookmarks"
+        brave_bookmark="/Users/gokulsreekumar/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks"
 
-        
 
-        
+
 fi
