@@ -42,10 +42,31 @@ if [ $# -eq 0 ]
         ## Location where Application Specific Data Files are present: /Users/gokulsreekumar/Library/Application\ Support
         ## Inside this above directory go to the application's folder inside that go to Default and there Bookmarks will be
         
-        chrome_bookmark="/Users/gokulsreekumar/Library/Application Support/Google/Chrome/Default/Bookmarks"
-        chromium_bookmark="/Users/gokulsreekumar/Library/Application Support/Chromium/Default/Bookmarks"
-        brave_bookmark="/Users/gokulsreekumar/Library/Application Support/BraveSoftware/Brave-Browser/Default/Bookmarks"
 
+        ## Find if BookMarks File Exist
+
+        chrome_bookmark='/Users/gokulsreekumar/Library/Application Support/Google/Chrome/Default/Bookmarks'
+        chromium_bookmark='/Users/gokulsreekumar/Library/Application Support/Chromium/Default/Bookmarks'
+        brave_bookmark="/Users/gokulsreekumar/Library/Application\ Support/BraveSoftware/Brave-Browser/Default/Bookmarks"
+
+        if [ $chrome_flag -eq 1 ] 
+            then
+                cat "$chrome_bookmark" | grep url | grep -v type | awk '{print($2)}' > chrome_bookmarks.txt
+        fi
+        
+        
+        if [ $chromium_flag -eq 1 ] 
+            then
+                cat "$chromium_bookmark" | grep url | grep -v type | awk '{print($2)}' > chromium_bookmarks.txt
+        fi
+        
+        find 
+        
+        if [ $brave_flag -eq 1 ] 
+            then
+                cat "$brave_bookmark" | grep url | grep -v type | awk '{print($2)}' > brave_bookmarks.txt
+        fi
+        
 
 
 fi
